@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>typer</title>
+    <style> 
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html, body, canvas {
+        width: 100%;
+        height: 100%;
+      }
+      
+      canvas {
+        position: absolute;    
+      }
+
+      .homeScreen {
+        margin: 20%;
+      }
+
+      .typerLogo {
+        margin-left: 100px;
+        margin-right: 100px;
+      }
+
+      .typerLogo h1 {
+        overflow: hidden;
+        border-right: .15em solid black;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: .55em;
+        font-size: 60px;
+        animation: 
+          typing 3.5s steps(40, end),
+          blink-caret .75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+      }
+
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: black; }
+      }
+
+      input#playerName {
+        display: inherit;
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-top: 50px;
+        border: none;
+        border-bottom: solid 2px black;
+        font-size: 17px;
+      }
+
+      button.startButton {
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-top: 50px;
+        padding: 10px 40px;
+        cursor: pointer;
+        text-transform: uppercase;
+        border: none;
+        color: black;
+        background-color: white;
+        border: 2px solid black;
+      }
+
+      canvas#gameField {
+        display: none;
+      }
+
+      .show {
+        display: block;
+      }
+      
+    </style>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <div class="homeScreen" id="homeScreeen">
+      <div class="typerLogo"><h1>Typer.</h1></div>
+      <input type="text" id="playerName" placeholder="Insert your name">
+      <button class="startButton" type="button" onclick="startCanvas()">START</button>
+    </div>
+    <canvas id="gameField"></canvas>
+  </body>
+</html>
